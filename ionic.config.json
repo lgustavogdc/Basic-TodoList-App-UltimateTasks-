@@ -1,0 +1,7 @@
+{
+  "name": "UltimateTasks",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
