@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Ultimate Tasks
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input placeholder="Type your next task:" [(ngModel)]="taskName">
+    </ion-input>
+    <ion-button (click)="addTask()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <div padding>
+    <ion-item *ngFor="let todo of taskList; let i = index">
+      {{todo}}
+      <ion-item>
+        <ion-button color="success" (click)="completeTask(i)">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="updateTask(i)">
+          <ion-icon name="pencil-outline"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" fill="clear" (click)="deleteTask(i)">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-item>
+  </div>
+</ion-content>
